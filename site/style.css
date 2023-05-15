@@ -254,7 +254,7 @@ head {
 .containerLineHorizontal {
     width: 80%;
     height: 5px;
-    background-color: aqua;
+    background-color: black;
     border-radius: 50%;
 }
 
@@ -1377,14 +1377,14 @@ head {
 
 }
 .graficosRight span {
-    margin-top: 2%;
+    margin-top: 5%;
     display: flex;
     font-weight: bold;
     font-size: 150%;
 }
 
 .graficoPorcentagemAbandono {
-    margin-top: 2%  ;
+    margin-top: 3%  ;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -1393,6 +1393,7 @@ head {
 }
 
 .cardsAbandono {
+    flex-direction: column;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -1400,11 +1401,18 @@ head {
     height: 25vh;
     background-color: transparent;
     color: #070D25;
-    background-color: white;
+}
+.ledendaCardsAbandono {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    color: white;
+    font-size: 65%;
+    align-items: center;
+    margin-top: 5%;
+
 }
 
-.cardsAbandono img {
-    width: 100%;
-    height: 150%;
-}
+
 
