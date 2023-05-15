@@ -254,7 +254,7 @@ head {
 .containerLineHorizontal {
     width: 80%;
     height: 5px;
-    background-color: black;
+    background-color: aqua;
     border-radius: 50%;
 }
 
