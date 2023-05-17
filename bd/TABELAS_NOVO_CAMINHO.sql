@@ -37,3 +37,7 @@ insert into Empresa values
 insert into Usuario values
 (null, '', '', '', '', '');
 
+insert into p values
+(null, 'coca'),
+(null, 'pepsi');
+
