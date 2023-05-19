@@ -12,6 +12,7 @@ Email varchar(45),
 Senha int
 );
 
+select * from tb_usuario;
 
 create table tb_doacao (
 idDoacao int primary key auto_increment,
