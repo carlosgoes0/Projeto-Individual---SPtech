@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | Novo-Caminho</title>
+    <link rel="shortcut icon" href="assets/img/imgFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/animacoes.js"></script>
+
+    
+</head>
+<body class="bodyImgHtml">
+    
+
+    <div id="pop-up">
+
+        <body id="bodyPretaPopups" id="popupDoacao">
+
+
+            <div class="cardLogin">
+   <div class="topDoacao">
+
+      
+
+            <div class="buttonClose" onclick="fecharPopUp()">
+               <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black"
+                     class="bi bi-x-lg" viewBox="0 0 16 16">
+                     <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                  </svg></a>
+            </div>
+         </div>
+         <div class="rightDoacaoBackground">
+
+            <div class="textDoacao">
+               <span>Faça sua Doação</span>
+            </div>
+
+            <div class="textPagamento">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                  </svg>
+               <a style="margin: 10px;"></a>
+               <a>Selecione o Projeto</a>
+            </div>
+
+            <div>
+                <select name="projetosSelecionado" id="projetosSelecionado" class="inputstransparente">
+                    <option value="1">Cuidar é Amar</option>
+                    <option value="2">Vínculos para a Vida</option>
+                    <option value="3">Mãos Estendidas</option>
+                    <option value="4">Novos Começos</option>
+                </select>
+
+                
+               <div id="teste"></div>
+            </div>
+
+            <div class="textPassword" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                    <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                    <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                  </svg>
+               <a style="margin: 10px;"></a>
+               <a>Valor</a>
+            </div>
+
+            <div>
+                <input id="valoresPagamento" class="inputstransparente" type="number" min="1">
+            </div>
+
+            <div class="cardsClicks">
+               <div class="clickEnter" onclick="doar()"><a href="#">Doar</a></div>
+            </div>
+         </div>
+      </div>
+              </div>
+            
+          
+
+
+
+<div class="containerBodyGeral" id="escurecer">
+
+    <div class="navbarGeral">   
+
+            <div class="logoNavbar"><img src="assets/img/imglogo.png" alt="" width="70vw" height="50vh"></div>
+
+                <div class="navbarHomeLeft">
+                    <ul><li><a href="projetos.html">Projetos</a></li></ul>
+                    <ul><li><a href="doacoes.html">Minhas Doações</a></li></ul>
+                    <ul><li><a href="dashboard/dashboardAnalitycs.html">Arrecadações </a></li></ul>
+                </div>
+
+                <div class="navbarHomeRight">
+                    <ul><li><a href="dedicatoria.html">Dedicatória</a></li></ul>
+                
+                    <ul><li><a href="#" class="btnLogout" button onclick="logout()">Logout</a></li></ul>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                </div>
+
+            </div>
+
+            <div class="sectionProjetos">
+                
+                <span>Projetos de Prevenção</span>
+                <div class="cardProjetos">
+                    <img src="assets/img/projeto1.jpeg" alt="">
+
+                    <div class="textProjetos">
+                    <h2>Cuidar é Amar: Prevenção ao Abandono Parental</h2>
+                    <span>O projeto "Cuidar é Amar: Prevenção ao Abandono Parental" é uma iniciativa dedicada a promover e fortalecer os vínculos familiares, visando prevenir o abandono parental e seus impactos negativos nas crianças e adolescentes.
+                    </span>
+
+                    <button onclick="aparecerPopUp()" class="btnDoacao" id="btnDoacao">Doar para este Projeto</button>
+                </div>
+                </div>
+
+
+                <div class="cardProjetos">
+                    <img src="assets/img/projeto2.png" alt="">
+
+                    <div class="textProjetos">
+                    <h2>Vínculos para a Vida: Prevenção e Proteção à Família</h2>
+                    <span>O projeto "Vínculos para a Vida: Prevenção e Proteção à Família" busca criar uma cultura de valorização dos laços familiares, proporcionando apoio e recursos para fortalecer as relações afetivas e garantir um ambiente seguro e amoroso para todas as crianças e adolescentes, contribuindo assim para seu pleno desenvolvimento e bem-estar.
+                    </span>
+
+                    <button onclick="aparecerPopUp()" class="btnDoacao">Doar para este Projeto</button>
+                </div>
+                </div>
+                
+                
+                   <span id="projetosApoio">Projetos de Apoio</span>
+
+
+                  <div class="cardProjetos">
+                    <img src="assets/img/projeto3.jpeg" alt="">
+
+                    <div class="textProjetos">
+                    <h2>Mãos Estendidas: Apoio e Proteção às Crianças Abandonadas</h2>
+                    <span>"Mãos Estendidas: Apoio e Proteção às Crianças Abandonadas" tem como objetivo principal garantir um ambiente seguro, acolhedor e protetor para as crianças que já sofreram o abandono, proporcionando-lhes cuidado, apoio emocional e oportunidades de desenvolvimento, enquanto busca soluções duradouras que promovam seu bem-estar e felicidade.
+                    </span>
+
+                    <button onclick="aparecerPopUp()" class="btnDoacao">Doar para este Projeto</button>
+                </div>
+                </div>
+
+                <div class="cardProjetos">
+                    <img src="assets/img/projeto4.png" alt="">
+
+                    <div class="textProjetos">
+                    <h2>Novos Começos: Reintegração de Crianças Abandonadas</h2>
+                    <span>O objetivo de um projeto de reintegração de crianças abandonadas, intitulado "Novos Começos", seria proporcionar uma oportunidade para que essas crianças tenham uma vida digna e afetuosa. O projeto buscaria reintegrar as crianças em uma família estável, oferecendo-lhes um ambiente seguro e amoroso.
+                    </span>
+
+                    <button onclick="aparecerPopUp()" class="btnDoacao">Doar para este Projeto</button>
+                </div>
+                </div>
+            </div>
+
+    </div>
+</body>
+</html>
+
+
+
+<script>
+
+  async  function logout() {
+
+       await sessionStorage.clear()
+        window.location.href="/index.html"
+        alert ("Obrigado! Volte Sempre")
+    }
+
+
+
+    function fazerDoacao() {
+
+        var projetos = [
+            "CuidarEAmar" , "VinculosParaVida", "MaosEstendidas", "NovosComecos"
+        ] ; 
+
+        var valores = [
+            "50", "100", "150", "200", "250", "300", "350", "400", "450", "500"
+        ]
+       
+        if ( projeto0 == projetos[0]) {
+            adicionarCardDoacao()
+        } else if ( projeto1 == projetos[1]) {
+            adicionarCardDoacao()
+        } else if (projeto2 == projetos[2]) {
+            adicionarCardDoacao()
+        } else if (projeto3 == projetos[3]) {
+            adicionarCardDoacao()
+        }
+    }
+
+
+    function adicionarCardDoacao() {
+
+        
+        return ` <div class="cardsDoacao" onclick="">
+                        <div class="imgProjeto">
+                            <img src="assets/img/projeto4.png" alt="">
+                        </div>
+                        <div class="nomeProjeto">
+                            <h2>Projeto:</h2>
+                            <h3>d${asd}</h3>
+                        </div>
+                        <div class="valorDoacao">
+                            <h2>R$:</h2>
+                            <h2>${asd}</h2>
+                        </div>
+                    </div>`
+    }
+
+
+
+
+     async function doar () {
+
+    var select = document.getElementById("projetosSelecionado");
+    var id = sessionStorage.idUsuario;
+   var resposta = await 
+   fetch(`/usuarios/doar/${id}/${select.value}/${valoresPagamento.value}`)
+    console.log(resposta);
+
+
+    if (resposta.ok == true){
+    alert("Obrigado por apoiar o projeto")
+    } else {
+        alert("Tente Novamente")
+    }
+
+     setTimeout(() => {
+        document.getElementById("pop-up").style.display = "none"
+        }, 500)
+}
+
+   function entrar() {
+       //aguardar();
+
+       var emailVar = email_input.value;
+       var senhaVar = senha_input.value;
+
+       if (emailVar == "" || senhaVar == "") {
+           cardErro.style.display = "block"
+           mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+           //finalizarAguardar();
+           return false;
+       }
+      
+
+       console.log("FORM LOGIN: ", emailVar);
+       console.log("FORM SENHA: ", senhaVar);
+
+       fetch("/usuarios/autenticar", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify({
+               emailServer: emailVar,
+               senhaServer: senhaVar
+           })
+       }).then(function (resposta) {
+           console.log("ESTOU NO THEN DO entrar()!")
+
+           if (resposta.ok) {
+               console.log(resposta);
+
+               resposta.json().then(json => {
+                   console.log(json);
+                   console.log(JSON.stringify(json));
+
+                   sessionStorage.EMAIL_USUARIO = json.email;
+                   sessionStorage.NOME_USUARIO = json.nome;
+                   sessionStorage.ID_USUARIO = json.id;
+
+                   setTimeout(function () {
+                       window.location = "../dashboard/dashboard.html";
+                   }, 1000); // apenas para exibir o loading
+
+               });
+
+           } else {
+
+               console.log("Houve um erro ao tentar realizar o login!");
+
+               resposta.text().then(texto => {
+                   console.error(texto);
+                   //finalizarAguardar(texto);
+               });
+           }
+
+       }).catch(function (erro) {
+           console.log(erro);
+       })
+
+       return false;
+   }
+
+</script>
+
+
+
+

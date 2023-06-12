@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedicatória | Novo-Caminho</title>
+    <link rel="shortcut icon" href="assets/img/imgFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+<body class="bodyImgHtml">
+    
+<div class="containerBodyGeral">
+
+    <div class="navbarGeral">   
+
+            <div class="logoNavbar"><img src="assets/img/imglogo.png" alt="" width="70vw" height="50vh"></div>
+
+                <div class="navbarHomeLeft">
+                    <ul><li><a href="projetos.html">Projetos</a></li></ul>
+                    <ul><li><a href="doacoes.html">Minhas Doações</a></li></ul>
+                    <ul><li><a href="dashboard/dashboardAnalitycs.html">Arrecadações
+                    </a></li></ul>
+                </div>
+
+                <div class="navbarHomeRight">
+                    <ul><li><a href="dedicatoria.html">Dedicatória</a></li></ul>
+                
+                    <ul><li><a href="login.html" class="btnLogout" onclick="logout()">Logout</a></li></ul>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                </div>
+
+            </div>
+            <h1>Minha familia</h1>
+            <div class="container">
+                <button class="arrow-left control" aria-label="Previous image">◀</button>
+                <button class="arrow-right control" aria-label="Next Image">▶</button>
+                <div class="gallery-wrapper">
+                  <div class="gallery">
+                    <!--       <div class="item current-item cyan"></div>
+                    <div class="item deeppink"></div>
+                    <div class="item turquoise"></div>
+                    <div class="item darkblue"></div>
+                    <div class="item purple"></div> -->
+                    <img src="assets/img/1.jpg" alt="Beach Image" class="item current-item">
+                    <img src="assets/img/2.jpg" alt="Animal Image" class="item current-item">
+                    <img src="assets/img/ryan1.jpg" alt="Model Image" class="item current-item">
+                    <img src="assets/img/ryan2.jpg" alt="Model Image" class="item current-item">
+                    <img src="assets/img/ryan3.jpg" alt="Model Image" class="item current-item">
+                    <img src="assets/img/5.jpg" alt="Model Image" class="item current-item">
+                    <img src="assets/img/ryan4.jpg" alt="Model Image" class="item current-item">
+                    <img src="assets/img/luanryan.jpg" alt="Model Image" class="item current-item">
+                      
+                  </div>
+                </div>
+              </div>
+            
+</body>
+</html>
+
+
+<script>
+
+  async  function logout() {
+
+       await sessionStorage.clear()
+        window.location.href="/index.html"
+        alert ("Obrigado! Volte Sempre")
+    }
+    
+    const controls = document.querySelectorAll(".control");
+let currentItem = 0;
+const items = document.querySelectorAll(".item");
+const maxItems = items.length;
+
+controls.forEach((control) => {
+  control.addEventListener("click", (e) => {
+    isLeft = e.target.classList.contains("arrow-left");
+
+    if (isLeft) {
+      currentItem -= 1;
+    } else {
+      currentItem += 1;
+    }
+
+    if (currentItem >= maxItems) {
+      currentItem = 0;
+    }
+
+    if (currentItem < 0) {
+      currentItem = maxItems - 1;
+    }
+
+    items.forEach((item) => item.classList.remove("current-item"));
+
+    items[currentItem].scrollIntoView({
+      behavior: "smooth",
+      inline: "center"
+    });
+
+    items[currentItem].classList.add("current-item");
+  });
+});
+
+  </script>

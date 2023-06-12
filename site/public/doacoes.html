@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doações | Novo-Caminho</title>
+    <link rel="shortcut icon" href="assets/img/imgFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bodyImgHtml">
+    
+<div class="containerBodyGeral">
+
+    <div class="navbarGeral">   
+
+            <div class="logoNavbar"><img src="assets/img/imglogo.png" alt="" width="70vw" height="50vh"></div>
+
+                <div class="navbarHomeLeft">
+                    <ul><li><a href="projetos.html">Projetos</a></li></ul>
+                    <ul><li><a href="doacoes.html">Minhas Doações</a></li></ul>
+                    <ul><li><a href="dashboard/dashboardAnalitycs.html">Arrecadações </a></li></ul>
+                </div>
+
+                <div class="navbarHomeRight">
+                    <ul><li><a href="dedicatoria.html">Dedicatória</a></li></ul>
+                
+                    <ul><li><a href="login.html" class="btnLoginHome" onclick="logout()">Logout</a></li></ul>
+                </div>
+
+            </div>
+
+
+
+            <div class="sectionProjetos">
+
+                    <div class="doacoesGerais" id="containerCardsDoacoes"></div>
+                   
+            </div>
+
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+
+  async  function logout() {
+
+       await sessionStorage.clear()
+        window.location.href="/index.html"
+        alert ("Obrigado! Volte Sempre")
+    }
+
+ async function exibirDoacoes () {
+
+     var resposta = await fetch(`/usuarios/buscarDoacao/${sessionStorage.idUsuario}`) 
+     resposta = await resposta.json()
+     console.log(resposta);
+
+    console.log(resposta.lenght);  
+     for(var i = 0; i < resposta.length; i++) {
+
+        var doacao = resposta[i]
+        console.log("rodou");
+        
+
+        containerCardsDoacoes.innerHTML += `
+
+                <div class="cardsDoacao" onclick="">
+                        <div class="imgProjeto">
+                            <img src="assets/img/projeto4.png" alt="">
+                        </div>
+                        <div class="nomeProjeto">
+                            <h2>Projeto:</h2>
+                            <h3>${doacao.Nome}</h3>
+                        </div>
+                        <div class="valorDoacao">
+                            <h2>R$:</h2>
+                            <h2>${doacao.Valor}</h2>
+                        </div>
+                    </div>
+        `
+
+     }
+       console.log("terminou a funcao"); 
+ }
+
+exibirDoacoes() 
+
+
+
+
+
+
+
+</script>

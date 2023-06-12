@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/img/imgfavicon.png" type="image/x-icon"> 
+    <title> Contribuições | Home </title>
+    
+</head>
+
+<body class="bodyImgHtml">
+
+<div class="containerBodyGeral">
+
+            <div class="navbarGeral">   
+
+                    <div class="logoNavbar"><a href="home.html"><img src="../assets/img/imglogo.png" alt="" width="70vw" height="50vh"></a></div>
+
+                        <div class="navbarHomeLeft">
+                          <ul><li><a href="../projetos.html">Projetos</a></li></ul>
+                          <ul><li><a href="../doacoes.html">Minhas Doações</a></li></ul>
+                          <ul><li><a href="../dashboard/dashboardAnalitycs.html">Arrecadações </a></li></ul>
+                        </div>
+                        <div class="navbarHomeRight">
+                          <ul><li><a href="../dedicatoria.html">Dedicatória</a></li></ul>
+                
+                          <ul><li><a href="login.html" class="btnLogout" onclick="logout()">Logout</a></li></ul>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                          </svg>
+    
+                              </div>
+
+            </div>
+            
+            <div class="tituloGraficosAnalitycs"><h2>Painel de Contribuições</h2></div>
+            <div class="graficosGeralAnalitycs">
+
+              <div class="graficosGeralAnalitycsLeft">
+                  
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+
+               <span>Olá, <span style="font-weight: bolder; font-size: 100%;" id="spanNomeUsuario">Usuário</span></span>  
+                <span>CPF: <span style="font-weight: bolder; font-size: 100%;" id="spanCpfUsuario">111.111.111-45</span> </span>  
+               <h2>Obrigado por fazer parte!</h2>
+              </div>
+              <div class="graficosGeralAnalitycsRight">
+
+                <div class="cardMetasProjetos">
+                  <div class="tituloMetas"><h2>Metas a serem alcançadas!</h2></div>
+                  <p style="color: black;">Seu apoio é fundamental para alcançarmos nosso objetivo de tornar o mundo um lugar melhor. Contribua agora e faça parte dessa mudança significativa.</p>
+                  </div>
+
+                   <span style="color: white;">Gráfico de Contribuições Gerais </span>
+
+                  <div class="graficoDoacoesGerais">
+                  <canvas id="myChart"></canvas>
+                     </div>
+                  </div>
+                  <div class="sessaoValoresTotais">
+                  <div class="QtdContribuidores">
+
+                    <div class="cardsColaboradores">
+                    <div class="acumuloCardsColaboradores">Total Acumulado</div>
+
+                    <div class="tituloCardsColaboradores">Projeto: Cuidar é Amar</div>
+                    <div class="totalCards">0</div>
+                    </div>
+                    <div class="cardsColaboradores">
+                    <div class="acumuloCardsColaboradores">Total Acumulado</div>
+
+                    <div class="tituloCardsColaboradores">Projeto: Vínculos para a Vida</div>
+                    <div class="totalCards">0</div>
+                    </div>
+                    <div class="cardsColaboradores">
+                     <div class="acumuloCardsColaboradores">Total Acumulado</div>
+                    <div class="tituloCardsColaboradores">Projeto: Mãos Estendidas</div>
+                    <div class="totalCards">0</div>
+                    </div>
+                    <div class="cardsColaboradores">
+                    <div class="acumuloCardsColaboradores">Total Acumulado</div>
+
+                    <div class="tituloCardsColaboradores">Projeto: Novos Começos</div>
+                    <div class="totalCards">0</div>
+
+                    </div>
+                  </div>
+</div>
+
+                </div>
+          
+
+            </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  async  function logout() {
+
+       await sessionStorage.clear()
+        window.location.href="/index.html"
+        alert ("Obrigado! Volte Sempre")
+    }
+
+async function inserirDados() {
+  var totalCards = document.getElementsByClassName("totalCards")
+  console.log(totalCards[0].innerHTML);
+  var resposta = await fetch("/usuarios/dadosGraficos")
+  resposta = await resposta.json()
+  console.log(resposta);
+  
+  console.log(Grafico.data);
+  for(var i = 0; i < resposta.length; i++) {
+
+      var projeto = resposta[i]
+      Grafico.data.labels.push(
+        projeto.nome
+      )
+      Grafico.data.datasets[0].data.push(
+        projeto.valor
+      )
+
+      if (projeto.nome == "Cuidar é Amar") {
+          totalCards[0].innerHTML = Number(projeto.valor).toFixed(2)
+      } else if (projeto.nome  == "Vínculos para a Vida") {
+         totalCards[1].innerHTML = Number(projeto.valor).toFixed(2)
+      } else if (projeto.nome == "Mãos Estendidas") {
+        totalCards[2].innerHTML = Number(projeto.valor).toFixed(2)
+      } else if (projeto.nome == "Novos Começos") {
+        totalCards[3].innerHTML = Number(projeto.valor).toFixed(2)
+      }
+  }
+  console.log(Grafico.data);
+  Grafico.update()
+  
+}
+
+
+spanCpfUsuario.innerHTML = sessionStorage.Cpf
+spanNomeUsuario.innerHTML = sessionStorage.Nome
+
+
+const ctx = document.getElementById('myChart');
+
+const Grafico = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [],
+    datasets: [
+      {label: "Contribuições",
+      data: [],
+      backgroundColor: ['black'],
+      borderWidth: 1
+    }
+    ]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+
+
+
+
+
+function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontentAnalitycs , tablinks;
+  tabcontentAnalitycs  = document.getElementsByClassName("tabcontentAnalitycs ");
+  for (i = 0; i < tabcontentAnalitycs .length; i++) {
+    tabcontentAnalitycs [i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablinkAnalitycs ");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+
+
+
+
+
+ inserirDados()
+
+</script>
